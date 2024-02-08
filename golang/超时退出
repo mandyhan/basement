@@ -1,3 +1,4 @@
+Golang三种方式实现超时退出 
 问题
 前段时间发现线上有个服务接口，总是间歇性告警，有时候一天两三次，有时候一天都没有。
 告警的逻辑是在一个接口中异步调用了另一个HTTP接口，这个HTTP接口调用出现超时。但是我去问了负责这个HTTP接口的同学，人家说他们的接口相应都是毫秒级别，还截图监控了，有图有真相，我还能说啥。
@@ -87,3 +88,4 @@ Done通道负责监听context啥时候完事，如果在time.After设置的超�
 1、context.WithTimeout/context.WithDeadline + time.After
 2、context.WithTimeout/context.WithDeadline + time.NewTimer
 3、channel + time.After/time.NewTimer
+
